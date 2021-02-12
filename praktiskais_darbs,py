@@ -1,0 +1,20 @@
+import ctypes  # An included library with Python install.   
+FromDig = 1
+ToDig = 50
+answ = 0
+ToDig1 = ToDig
+ctypes.windll.user32.MessageBoxW(0, "Iedomājies skaitli no "+str(FromDig)+" līdz "+str(ToDig), "Uzmini skaitli", 0)
+while ToDig1 - FromDig > 1 :
+    ToDig1 = round((FromDig + ToDig1) / 2)
+    answ = ctypes.windll.user32.MessageBoxW(0, "Vai tas ir kāds no "+str(FromDig)+" līdz "+str(ToDig1)+"?", "Uzmini skaitli", 4)
+    if (answ == 7) :
+        FromDig = ToDig1 + 1 
+        ToDig1 = ToDig
+    else :
+        ToDig = ToDig1
+
+answ = ctypes.windll.user32.MessageBoxW(0, "Varbūt tas ir "+str(FromDig)+"?", 4)
+if answ == 7 :
+    ctypes.windll.user32.MessageBoxW(0, "Tu iedomājies skaitli "+str(ToDig1), "Uzmini skaitli", 0)
+else :
+    ctypes.windll.user32.MessageBoxW(0, "Tu iedomājies skaitli "+str(FromDig), "Uzmini skaitli", 0)        
