@@ -13,7 +13,7 @@ while ToDig1 - FromDig > 1 :
     else :
         ToDig = ToDig1
 
-answ = ctypes.windll.user32.MessageBoxW(0, "Varbūt tas ir "+str(FromDig)+"?", 4)
+answ = ctypes.windll.user32.MessageBoxW(0, "Varbūt tas ir "+str(FromDig)+"?", "Uzmini skaitli", 4)
 if answ == 7 :
     ctypes.windll.user32.MessageBoxW(0, "Tu iedomājies skaitli "+str(ToDig1), "Uzmini skaitli", 0)
 else :
